@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle Test</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            padding: 2rem;
+            font-family: Arial, sans-serif;
+        }
+        .test-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+    </style>
+</head>
+<body>
+    <h1>Theme Toggle Test</h1>
+    
+    <div class="test-card">
+        <h2>Test Card</h2>
+        <p>This is a test card to see if the theme is being applied correctly.</p>
+    </div>
+    
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-sun sun"></i>
+        <i class="fas fa-moon moon"></i>
+        <span class="theme-text">Dark Mode</span>
+    </button>
+    
+    <script src="./theme.js"></script>
+    <script>
+        // Log theme changes to console
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                console.log('Theme toggled to:', currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        }
+        
+        // Log current theme on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            console.log('Current theme on load:', currentTheme);
+        });
+    </script>
+</body>
+</html>

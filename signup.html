@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - PETERSMARK</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .signup-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            padding: 2rem;
+        }
+
+        .signup-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 3rem 2.5rem;
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .signup-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            border-radius: 50%;
+            padding: 1rem;
+        }
+
+        .signup-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .signup-header h1 {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .signup-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            outline: none;
+        }
+
+        .password-input {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .terms-conditions {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .terms-conditions input[type="checkbox"] {
+            margin-top: 0.25rem;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary-color);
+        }
+
+        .terms-conditions a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .terms-conditions a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .signup-btn:hover {
+            background-color: #4338ca;
+            transform: translateY(-1px);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .divider::before {
+            margin-right: 1rem;
+        }
+
+        .divider::after {
+            margin-left: 1rem;
+        }
+
+        .social-signup {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .social-btn:hover {
+            background-color: var(--card-bg);
+            border-color: var(--border-hover);
+        }
+
+        .social-btn i {
+            font-size: 1.1rem;
+        }
+
+        .login-link {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .login-link a {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 0.25rem;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .password-strength {
+            margin-top: 0.5rem;
+            height: 4px;
+            background-color: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .strength-meter {
+            height: 100%;
+            width: 0;
+            background-color: #ef4444;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+
+        .password-hints {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .password-hints ul {
+            margin: 0.25rem 0 0 1.25rem;
+            padding: 0;
+        }
+
+        .password-hints li {
+            margin-bottom: 0.25rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .password-hints li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+        }
+
+        .password-hints li.valid {
+            color: #10b981;
+        }
+
+        .password-hints li.valid:before {
+            content: "✓";
+            color: #10b981;
+        }
+
+        @media (max-width: 480px) {
+            .signup-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .signup-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-page">
+        <div class="signup-container">
+            <div class="signup-header">
+                <div class="signup-logo">
+                    <img src="./logo.png" alt="Petersmark Logo">
+                </div>
+                <h1>Create an Account</h1>
+                <p>Join our community to get started</p>
+            </div>
+            
+            <form id="signupForm">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" class="form-control" placeholder="John" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" class="form-control" placeholder="Create a strong password" required>
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-meter" id="strengthMeter"></div>
+                    </div>
+                    <div class="password-hints" id="passwordHints">
+                        <p>Password must contain:</p>
+                        <ul>
+                            <li id="length">At least 8 characters</li>
+                            <li id="uppercase">At least one uppercase letter</li>
+                            <li id="number">At least one number</li>
+                            <li id="special">At least one special character</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input">
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                        <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    <div id="passwordMatch" class="password-hints" style="color: #ef4444; display: none;">
+                        Passwords do not match
+                    </div>
+                </div>
+                
+                <div class="terms-conditions">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="signup-btn">Create Account</button>
+                
+                <div class="divider">or sign up with</div>
+                
+                <div class="social-signup">
+                    <button type="button" class="social-btn">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button type="button" class="social-btn">
+                        <i class="fab fa-github"></i>
+                        Continue with GitHub
+                    </button>
+                </div>
+                
+                <p class="login-link">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.querySelector('#togglePassword');
+        const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+        const password = document.querySelector('#password');
+        const confirmPassword = document.querySelector('#confirmPassword');
+        
+        function togglePasswordVisibility(input, button) {
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            const icon = button.querySelector('i');
+            icon.classList.toggle('fa-eye');
+            icon.classList.toggle('fa-eye-slash');
+        }
+
+        togglePassword.addEventListener('click', () => togglePasswordVisibility(password, togglePassword));
+        toggleConfirmPassword.addEventListener('click', () => togglePasswordVisibility(confirmPassword, toggleConfirmPassword));
+
+        // Password strength checker
+        function checkPasswordStrength() {
+            const value = password.value;
+            const strengthMeter = document.getElementById('strengthMeter');
+            const hints = {
+                length: document.getElementById('length'),
+                uppercase: document.getElementById('uppercase'),
+                number: document.getElementById('number'),
+                special: document.getElementById('special')
+            };
+
+            let strength = 0;
+            let color = '#ef4444'; // red
+
+            // Check length
+            if (value.length >= 8) {
+                hints.length.classList.add('valid');
+                strength += 25;
+            } else {
+                hints.length.classList.remove('valid');
+            }
+
+            // Check uppercase
+            if (/[A-Z]/.test(value)) {
+                hints.uppercase.classList.add('valid');
+                strength += 25;
+            } else {
+                hints.uppercase.classList.remove('valid');
+            }
+
+            // Check number
+            if (/\d/.test(value)) {
+                hints.number.classList.add('valid');
+                strength += 25;
+            } else {
+                hints.number.classList.remove('valid');
+            }
+
+            // Check special character
+            if (/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+                hints.special.classList.add('valid');
+                strength += 25;
+            } else {
+                hints.special.classList.remove('valid');
+            }
+
+            // Update strength meter
+            strengthMeter.style.width = strength + '%';
+            
+            // Update color based on strength
+            if (strength <= 25) {
+                color = '#ef4444'; // red
+            } else if (strength <= 50) {
+                color = '#f59e0b'; // amber
+            } else if (strength <= 75) {
+                color = '#3b82f6'; // blue
+            } else {
+                color = '#10b981'; // emerald
+            }
+            
+            strengthMeter.style.backgroundColor = color;
+        }
+
+        // Check if passwords match
+        function checkPasswordMatch() {
+            const confirmPassword = document.getElementById('confirmPassword');
+            const passwordMatch = document.getElementById('passwordMatch');
+            
+            if (confirmPassword.value !== '' && password.value !== confirmPassword.value) {
+                passwordMatch.style.display = 'block';
+                confirmPassword.setCustomValidity("Passwords do not match");
+            } else {
+                passwordMatch.style.display = 'none';
+                confirmPassword.setCustomValidity('');
+            }
+        }
+
+        // Event listeners
+        password.addEventListener('input', checkPasswordStrength);
+        confirmPassword.addEventListener('input', checkPasswordMatch);
+
+        // Handle form submission
+        const signupForm = document.getElementById('signupForm');
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your signup logic here
+            console.log('Signup form submitted');
+            
+            // Show success message
+            alert('Account created successfully! Redirecting to dashboard...');
+            // Redirect to dashboard or home page after successful signup
+            // window.location.href = 'dashboard.html';
+        });
+
+        // Add theme toggle functionality
+        const themeToggle = document.createElement('button');
+        themeToggle.className = 'theme-toggle';
+        themeToggle.innerHTML = `
+            <i class="fas fa-sun sun"></i>
+            <i class="fas fa-moon moon"></i>
+            <span class="theme-text">Dark Mode</span>
+        `;
+        themeToggle.style.position = 'absolute';
+        themeToggle.style.top = '1rem';
+        themeToggle.style.right = '1rem';
+        themeToggle.style.zIndex = '10';
+        document.querySelector('.signup-page').appendChild(themeToggle);
+
+        // Theme toggle functionality
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('darkMode', isDark);
+            updateThemeIcon(isDark);
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-theme');
+            updateThemeIcon(true);
+        }
+
+        function updateThemeIcon(isDark) {
+            const sunIcon = document.querySelector('.sun');
+            const moonIcon = document.querySelector('.moon');
+            const themeText = document.querySelector('.theme-text');
+            
+            if (isDark) {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'inline-block';
+                themeText.textContent = 'Light Mode';
+            } else {
+                sunIcon.style.display = 'inline-block';
+                moonIcon.style.display = 'none';
+                themeText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="be0S214j7DpRqUt5GE0rabPGtGSnd8bVaajYhpYDWtI" />
+     <title>PETERSMARK- Official Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./sections.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="welcomeAudio" src="welcome.mp3" preload="auto"></audio>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <img src="./logo.png" alt="Petersmark Logo">
+                </div>
+                <div class="nav-buttons" style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="#home" class="home-btn">Home</a>
+                    <div class="dropdown">
+                        <a href="projects.html" class="projects-btn">Project</a>
+                        <button class="dropdown-toggle" id="projectsBtn" aria-label="Toggle projects menu">
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-content" id="projectsDropdown">
+                            <a href="#ecommerce">E-commerce Platform</a>
+                            <a href="#mobile-app">Mobile Banking App</a>
+                            <a href="#crm">CRM System</a>
+                            <a href="#ai-assistant">AI Virtual Assistant</a>
+                            <a href="#iot-dashboard">IoT Dashboard</a>
+                        </div>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun sun"></i>
+                        <i class="fas fa-moon moon"></i>
+                        <span class="theme-text">Dark Mode</span>
+                    </button>
+                    <a href="login.html" class="login-btn" id="loginBtn">
+                        Login / Sign Up
+                    </a>
+                </div>
+                <div class="site-title">
+                    <span>P</span><span>E</span><span>T</span><span>E</span><span>R</span><span>S</span><span>M</span><span>A</span><span>R</span><span>K</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Innovating the Future with Software Solutions</h2>
+            <p>Specializing in Web/App Development and cutting-edge AI Agents.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-us">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At Petersmark, we are a team of dedicated innovators and problem-solvers, passionate about leveraging technology to create impactful solutions. With years of experience in the software industry, we specialize in delivering bespoke web and mobile applications, alongside cutting-edge AI agents that redefine efficiency and user experience.</p>
+            
+            <div class="founder-bio">
+                <div class="founder-image">
+                    <img src="./logo.png" alt="Petersmark Logo" class="founder-logo">
+                </div>
+                <div class="founder-details">
+                    <h3>Meet Our Founder</h3>
+                    <p class="founder-name">G. Santhosh Kumar</p>
+                    <p class="founder-title">Founder & CEO</p>
+                    <p>As the visionary behind Petersmark, I'm excited to embark on this journey of innovation and technological advancement. With a fresh perspective and a passion for creating impactful solutions, I founded Petersmark to bring innovative ideas to life in the digital landscape.</p>
+                    <p>Our startup is built on the principles of creativity, dedication, and a commitment to delivering exceptional value to our clients. We're just getting started, but our enthusiasm and drive to make a difference in the tech industry are boundless.</p>
+                </div>
+            </div>
+            
+            <p>Our mission is to empower businesses with transformative digital tools. We believe in a collaborative approach, working closely with our clients to understand their unique challenges and deliver solutions that not only meet but exceed expectations. From conceptualization to deployment and ongoing support, we are committed to excellence at every stage of the development lifecycle.</p>
+            <div class="about-features">
+                <div class="feature-item">
+                    <h3>Innovation</h3>
+                    <p>Constantly exploring new technologies to bring fresh ideas to life.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Quality</h3>
+                    <p>Delivering robust, reliable, and high-performance software.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Client-Centric</h3>
+                    <p>Prioritizing client needs and fostering strong, lasting partnerships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Web Development</h3>
+                    <p>We build robust, scalable, and visually stunning web applications using the latest technologies. From dynamic front-ends to powerful back-ends, we deliver solutions that drive engagement and growth.</p>
+                    <a href="#" class="service-btn">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <h3>Mobile App Development</h3>
+                    <p>Our team specializes in creating intuitive and high-performance mobile applications for both iOS and Android. We focus on user experience and cutting-edge features to bring your ideas to life on any device.</p>
+                    <a href="#" class="service-btn">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <h3>AI Agent Development</h3>
+                    <p>Leverage the power of artificial intelligence with our custom AI agent development. We design and deploy intelligent systems for automation, data analysis, and enhanced decision-making across various industries.</p>
+                    <a href="#" class="service-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to work with us? We'd love to hear from you!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-envelope"></i> petersmark1607@gmail.com</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/petersmark29396?t=mAZaLpTJByP5fsfoKVmmkw&s=09" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/groups/15410046" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" action="mailto:petersmark1607@gmail.com" method="POST" enctype="text/plain">
+                    <h3>Send Us a Message</h3>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Petersmark. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="./theme.js"></script>
+</body>
+</html>

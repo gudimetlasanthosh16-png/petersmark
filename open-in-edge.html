@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opening in Edge...</title>
+    <script>
+        // Try to open in Microsoft Edge
+        window.location.href = 'microsoft-edge:file://' + window.location.protocol + '//' + window.location.host + '/company-website/index.html';
+        
+        // Fallback to file protocol if needed
+        setTimeout(function() {
+            window.location.href = 'file:///' + window.location.pathname.replace(/\/[^/]*$/, '/company-website/index.html');
+        }, 1000);
+    </script>
+</head>
+<body>
+    <p>If you're not automatically redirected, please open <a href="company-website/index.html">company-website/index.html</a> manually.</p>
+</body>
+</html>
